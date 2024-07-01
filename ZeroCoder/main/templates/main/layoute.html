@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+    {% block title %}
+    <title>Мой Сайт</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="d-flex">
+        <aside class="bg-light p-4" style="min-width: 200px;">
+            <div class="text-center mb-4">
+                <img src="{% static 'main/img/humster.jpg' %}" alt="Хомяк-Комбо" class="img-fluid" width="150">
+                <span class="d-block mt-2">Хомяк-Комбо Django</span>
+            </div>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'page 2' %}">Второстепенная</a>
+                </li>
+            </ul>
+        </aside>
+        <main class="flex-grow-1 p-4">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
